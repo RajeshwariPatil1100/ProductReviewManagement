@@ -39,19 +39,33 @@ namespace ProductReviewManagement
                  new Product{productID=23,UserId=23,Rating=1,Review="Very Bad",IsLike=false},
                  new Product{productID=24,UserId=24,Rating=1,Review="Very Bad",IsLike=false},
                  new Product{productID=25,UserId=25,Rating=1,Review="avrag",IsLike=true}
-                  
+
 
             };
 
-            Console.WriteLine("Enter Option\n1.Top 3data with high rating");
+            Console.WriteLine("Enter Option\n1.Top3 data with high rating\n2.Retrive data from list");
             int op = Convert.ToInt16(Console.ReadLine());
             switch (op)
             {
                 case 1:
                     ProductManagement.Top3Records(products);
                     break;
-            }
+                case 2:
+                    Console.WriteLine("Enter Option\n1.All data with greater then 3 rating\n2.From productId 1,4,9");
+                    int ops = Convert.ToInt16(Console.ReadLine());
+                    switch (ops)
+                    {
+                        case 1:
+                            ProductManagement.AllRecord(products);
+                            break;
+                        case 2:
+                            ProductManagement.RetriveFromProductId(products);
+                            break;
+                    }
+                    break;
 
-        } 
+
+            }
+        }
     }
 }
