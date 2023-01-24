@@ -49,14 +49,24 @@ namespace ProductReviewManagement
         }
         public static void RetriveProductIdAndReview(List<Product> productsReviewList)
         {
-            var productdata = productsReviewList.Select(product => new { ProductId = product.productID, Review = product.Review }).ToList();
+            var productdata = productsReviewList.Select(product => new { productID = product.productID, Review = product.Review }).ToList();
 
 
             foreach (var list in productdata)
             {
-                Console.WriteLine("ProdcutID " + list.ProductId + " Review " + list.Review);
+                Console.WriteLine("ProdcutID " + list.productID + " Review " + list.Review);
             }
 
         }
+        public static void SkipTop5(List<Product> productsReviewList)
+        {
+            var productdata = productsReviewList.Select(product => new { productID = product.productID, Review = product.Review, UserId = product.UserId, Rating = product.Rating, IsLike = product.IsLike }).Skip(5).ToList();
+            foreach (var list in productdata)
+            {
+                Console.WriteLine("ProdcutID " + list.productID + " UserId " + list.UserId + " Rating "
+                    + list.Rating + " Review " + list.Review + " IsLike " + list.IsLike);
+            }
+        }
     }
 }
+
