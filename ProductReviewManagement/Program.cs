@@ -42,7 +42,6 @@ namespace ProductReviewManagement
 
 
             };
-
             Console.WriteLine("Enter Option\n1.Top3 data with high rating\n2.Retrive data from list\n3.Count of review present for each id");
             int op = Convert.ToInt16(Console.ReadLine());
             switch (op)
@@ -65,6 +64,9 @@ namespace ProductReviewManagement
                     break;
                 case 3:
                     Count.CountOfProduct(products);
+                    break;
+                case 4:
+                    ProductManagement.RetriveProductIdAndReview(products);
                     break;
 
             }
